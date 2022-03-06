@@ -1,0 +1,76 @@
+.menu {
+  &-items {
+    font-weight: 400;
+    font-size: 20px;
+    padding: 4px 0;
+    &:nth-child(2) {
+      font-weight: 500;
+    }
+    &:nth-child(1) {
+      .item {
+        font-weight: 500;
+        color: $color1;
+        height: 52px;
+        width: 52px;
+        border-radius: 50%;
+        &:hover {
+          background-color: #1d9bf01f !important;
+          cursor: pointer;
+        }
+        i {
+          font-size: 28px !important;
+          &::before {
+            transform: translateY(-5px);
+          }
+        }
+      }
+    }
+  }
+  .item {
+    background-color: #fff;
+    border-radius: 9999px;
+    padding: 12px;
+    position: relative;
+    @extend %transD;
+    .count {
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      border-radius: 50%;
+      @include border(1px, #fff);
+      width: 18px;
+      height: 18px;
+      font-size: 12px;
+      background-color: $color1;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    i {
+      font-size: 21.33px;
+      margin-right: 10px;
+    }
+    &:hover {
+      background-color: $bg1-hover;
+      cursor: pointer;
+    }
+  }
+}
+.btn-twt {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  background-color: $color1;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 999px;
+  border: 0;
+  max-width: 225px;
+  @include boxS(8%);
+  @extend %transD;
+  &:hover {
+    background-color: $color1-hover;
+  }
+}

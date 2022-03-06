@@ -1,0 +1,139 @@
+.head {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 35%;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 20px;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
+  padding: 10px;
+  max-width: 624px;
+  background-color: #ffffffcc;
+}
+.home {
+  position: relative;
+  height: 50vh;
+}
+@mixin bg($r, $g, $b, $a) {
+  color: rgb($r, $g, $b);
+  background-color: rgba($r, $g, $b, $a);
+}
+.t-content {
+  display: flex;
+  padding-bottom: 0 !important;
+  width: 100%;
+  &:hover {
+    cursor: pointer;
+    background-color: $bg1-hover;
+  }
+  &-tweet {
+    font-size: 15px;
+    font-weight: 400;
+  }
+  &-name {
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    span > span{
+      font-weight: 400;
+      color: $text2;
+    }
+  }
+  &-icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    color: $text2;
+    font-size: 13px;
+    &-icon {
+      display: flex;
+      align-items: center;
+      @extend %transD;
+
+      i {
+        @extend %transD;
+        height: 35px;
+        width: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &:nth-child(1),
+      &:nth-child(4) {
+        &:hover {
+          color: rgb(29, 155, 240);
+          i {
+            @include bg(29, 155, 240, 0.1);
+            border-radius: 50%;
+          }
+        }
+      }
+      &:nth-child(2) {
+        &:hover {
+          color: rgb(0, 186, 124);
+          i {
+            @include bg(0, 186, 124, 0.1);
+            border-radius: 50%;
+          }
+        }
+      }
+      &:nth-child(3) {
+        &:hover {
+          color: rgb(249, 24, 128);
+          i {
+            @include bg(249, 24, 128, 0.1);
+            border-radius: 50%;
+          }
+        }
+      }
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+  &-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+}
+.new-t {
+  display: flex;
+  justify-content: space-between;
+  &-img {
+    padding: 10px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  &-write {
+    width: 100%;
+    padding: 10px;
+    textarea {
+      border: 0;
+      font-size: 20px;
+      font-weight: 400;
+      resize: none;
+      &:focus-within {
+        outline: 0;
+      }
+    }
+  }
+  &-extends {
+    &-icons {
+      display: flex;
+      i {
+        margin-right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+    color: $color1;
+    display: flex;
+    justify-content: space-between;
+  }
+}
