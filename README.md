@@ -1,4 +1,5 @@
-# app
+# Twitter Clone Case
+[Live Demo](https://prisma-case-twitter-clone.vercel.app/home)
 
 ## Project setup
 ```
