@@ -19,6 +19,8 @@
           <div class="new-t-write">
             <textarea
               type="text"
+              v-model="tweet"
+              @change="addTweet"
               maxlength="120"
               placeholder=" Neler Oluyor?"
               class="w-100"
@@ -82,30 +84,34 @@
 <script>
 import { useTweetStore } from "../store/tweets";
 import moment from "moment";
-
+import { ref } from "vue";
 export default {
   name: "Home",
   beforeMount() {
-    /** 
-     * *This function pulls tweets from pinia.  
+    /**
+     * *This function pulls tweets from pinia.
      *  */
     useTweetStore().getTweets();
     document.title = "(2) Anasayfa";
   },
   methods: {
     convertDate(date) {
-      /**  
+      /**
        * *This function returns the date formats from the pinia by using the moment js library by editing it as specified.
        * *It only takes the date variable in it.
-      */
+       */
       return moment(date).format("DD MMM YYYY HH:mm");
     },
   },
   setup() {
-    const t = useTweetStore();
-
+    const obj = {};
+    obj.tweet = ref("");
+    obj.addTweet = () => {
+      obj.t.postTweet(obj.tweet.value);
+    };
+    obj.t = useTweetStore();
     return {
-      t,
+      ...obj,
     };
   },
 };

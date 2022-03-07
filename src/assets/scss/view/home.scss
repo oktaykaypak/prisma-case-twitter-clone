@@ -22,6 +22,9 @@
   background-color: rgba($r, $g, $b, $a);
 }
 .t-content {
+  &-text{
+    width: 100%;
+  }
   display: flex;
   padding-bottom: 0 !important;
   width: 100%;
