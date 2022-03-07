@@ -20,7 +20,6 @@
             <textarea
               type="text"
               v-model="tweet"
-              @change="addTweet"
               maxlength="120"
               placeholder=" Neler Oluyor?"
               class="w-100"
@@ -34,7 +33,7 @@
                 <i class="bi bi-geo-alt more"></i>
               </div>
               <div class="new-t-button">
-                <button class="btn btn-blue">Tweetle</button>
+                <button @click="addTweet" class="btn btn-blue">Tweetle</button>
               </div>
             </div>
           </div>
@@ -108,6 +107,7 @@ export default {
     obj.tweet = ref("");
     obj.addTweet = () => {
       obj.t.postTweet(obj.tweet.value);
+      obj.tweet.value = "";
     };
     obj.t = useTweetStore();
     return {
